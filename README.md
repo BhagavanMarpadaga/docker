@@ -11,3 +11,5 @@ This is a handy reference for commonly used Docker commands along with their des
 | `docker container rm container-id`   | Removes a specific Docker container by its ID.                |
 | `docker pull busybox`                | Pulls the `busybox` image from the Docker Hub registry.        |
 | `docker run -it my-image`            | Runs a container from the specified image in interactive mode.|
+| `docker run -it -p 8000:8000 my-app1` | Runs container by mapping port with the local machine. First one
+                                          host machine port :container machine port
