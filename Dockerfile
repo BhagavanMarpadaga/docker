@@ -7,12 +7,7 @@ FROM node:20.18.2-alpine3.21
 
 WORKDIR /home/app
 
-# COPY package-lock.json package-lock.json
-# COPY package.json package.json
-# just use wild card everything will be copied
-
-
-COPY package*.json .
+COPY package*.json ./
 
 
 COPY index.js index.js
@@ -20,4 +15,5 @@ COPY index.js index.js
 
 RUN npm install
 
-CMD ["npm" "start"]
+CMD ["node", "index.js"]
+
