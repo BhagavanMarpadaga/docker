@@ -4,12 +4,15 @@ FROM node:20.18.2-alpine3.21
 
 
 # copying the source code
-COPY index.js home/app/index.js
-COPY package-lock.json home/app/package-lock.json
-COPY package.json home/app/package.json
-
 
 WORKDIR /home/app
+
+COPY package-lock.json package-lock.json
+COPY package.json package.json
+
+
+COPY index.js index.js
+
 
 RUN npm install
 
