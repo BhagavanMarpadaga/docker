@@ -7,8 +7,12 @@ FROM node:20.18.2-alpine3.21
 
 WORKDIR /home/app
 
-COPY package-lock.json package-lock.json
-COPY package.json package.json
+# COPY package-lock.json package-lock.json
+# COPY package.json package.json
+# just use wild card everything will be copied
+
+
+COPY package*.json .
 
 
 COPY index.js index.js
