@@ -1,13 +1,6 @@
-# each of these instructions are layers
+# if we see the bloated one where we have ubuntu on the top we are installing the node, we need to go with as lighter images as possible
 
-# BASE IMAGE
-FROM ubuntu
-
-RUN apt-get update
-RUN apt install -y curl
-RUN curl -sL https://deb.nodesource.com/setup_20.x -o nodesource_setup.sh
-RUN bash nodesource_setup.sh
-RUN apt install -y nodejs  
+FROM node:20.18.2-alpine3.21
 
 
 # copying the source code
@@ -19,3 +12,5 @@ COPY package.json home/app/package.json
 WORKDIR /home/app
 
 RUN npm install
+
+CMD ["npm" "start"]
